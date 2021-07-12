@@ -63,7 +63,7 @@ public partial class MainWindow : Gtk.Window
         string[] paths = { @"/home", "josue-user", "Repos", "ProyectoC","C#","RegisComida","RegisComida","Imagenes", "pizza.jpeg" };
         string fullPath = System.IO.Path.Combine(paths);
         //image1.Pixbuf = new Gdk.Pixbuf(@"/home/josue-user/Repos/ProyectoC/C#/RegisComida/RegisComida/Imagenes/pizza.jpeg");
-        image1.Pixbuf = new Gdk.Pixbuf(fullPath);
+        image1.Pixbuf = new Gdk.Pixbuf(fullPath,100,100);
     }
     ListStore registro;
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)
@@ -85,6 +85,30 @@ public partial class MainWindow : Gtk.Window
 
     protected void btnInsertar_Clicked(object sender, EventArgs e)
     {
+        try
+        {
+            datos.Conectar();
+            string z = $"{CambiarFormato(int.Parse(spinhora.Text))}"
+            , y = $"{CambiarFormato(int.Parse(spinmin.Text))}";
+
+            string format = $"{CambiarFormato(calendar1.Year)}-{CambiarFormato(calendar1.Month + 1)}-{CambiarFormato(calendar1.Day)}";
+            string x = "INSERT INTO `registro` (`id_registro`, `id_comida`, `fecha`) " +
+                $"VALUES (NULL, '{int.Parse(entryComida.Text)}', '{format} {z}:{y}:00')";
+            //sql = "INSERT INTO `categoria` (`id_categoria`, `id_plato`, `descripcion`, `id_encargado`) " +
+            //$"VALUES ('{categ.id_categoria}', '{categ.id_plato}', '{categ.Descripcion}', '{categ.id_encargado}');";
+            Mensaje(x);
+            //datos.ConsultarComando(x);
+            datos.Insertar(x);
+            Mensaje("Se a insertado el registro");
+        }
+        catch (Exception ex)
+        {
+            MensajeError(ex + "");
+        }
+        finally
+        {
+            datos.Desconectar();
+        }
     }
 
     protected void btnMostrar_Clicked(object sender, EventArgs e)
@@ -117,7 +141,7 @@ public partial class MainWindow : Gtk.Window
             while (reader.Read())
             {
                 int id = int.Parse("" + reader["imagenid"]);
-                var imagenes = new Gdk.Pixbuf(ObtenerImagen(id));
+                var imagenes = new Gdk.Pixbuf(ObtenerImagen(id),50,50);
                 registro.AppendValues($"{reader["id_registro"].ToString()}", imagenes, $"{reader["nombre"].ToString()}", $"{reader["fecha"].ToString()}");
             }
             reader.Close();
@@ -151,7 +175,11 @@ public partial class MainWindow : Gtk.Window
                 case 1:
                     UbicacionImagen = "hamPollo.jpeg";
                     break;
+                case 2:
+                    UbicacionImagen = "Hotdog.jpeg";
+                    break;
                 default:
+                    UbicacionImagen = "Error.jpeg";
                     break;
             }
             string[] paths = { @"/home", "josue-user", "Repos", "ProyectoC", "C#", "RegisComida", "RegisComida", "Imagenes", UbicacionImagen };
@@ -163,5 +191,33 @@ public partial class MainWindow : Gtk.Window
             throw new Exception("Error al cargar la imagen");
         }
 
+    }
+    private string CambiarFormato(int valor)
+    {
+        if (valor <= 9)
+        {
+            return "0" + valor;
+        }
+        else
+        {
+            return "" + valor;
+        }
+    }
+    private void Mensaje(string x)
+    {
+        MessageDialog mensaje = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, x);
+        mensaje.Run();
+        mensaje.Destroy();
+    }
+
+    private void CambiarId()
+    {
+        entryComida.Text = spinbuttonID.Text;
+        int x = int.Parse(spinbuttonID.Text);
+    }
+
+    protected void spinimagenid_chenged(object sender, EventArgs e)
+    {
+        CambiarId();
     }
 }
