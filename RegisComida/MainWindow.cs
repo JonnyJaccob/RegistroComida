@@ -63,7 +63,7 @@ public partial class MainWindow : Gtk.Window
         string[] paths = { @"/home", "josue-user", "Repos", "ProyectoC","C#","RegisComida","RegisComida","Imagenes", "pizza.jpeg" };
         string fullPath = System.IO.Path.Combine(paths);
         //image1.Pixbuf = new Gdk.Pixbuf(@"/home/josue-user/Repos/ProyectoC/C#/RegisComida/RegisComida/Imagenes/pizza.jpeg");
-        image1.Pixbuf = new Gdk.Pixbuf(fullPath,100,100);
+        image1.Pixbuf = new Gdk.Pixbuf(fullPath,200,200);
     }
     ListStore registro;
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)
@@ -96,10 +96,20 @@ public partial class MainWindow : Gtk.Window
                 $"VALUES (NULL, '{int.Parse(entryComida.Text)}', '{format} {z}:{y}:00')";
             //sql = "INSERT INTO `categoria` (`id_categoria`, `id_plato`, `descripcion`, `id_encargado`) " +
             //$"VALUES ('{categ.id_categoria}', '{categ.id_plato}', '{categ.Descripcion}', '{categ.id_encargado}');";
-            Mensaje(x);
+            MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Question, ButtonsType.YesNo, "¿Desea continuar con la operacion?. \n"+x);
+            md.SetPosition(WindowPosition.Center);
+            ResponseType result = (ResponseType)md.Run();
+            if (result == ResponseType.Yes)
+            {
+                datos.Insertar(x);
+                Mensaje("Se a insertado el registro");
+            }else
+            {
+                Mensaje("Se cancelo la operacion");
+            }
+            md.Destroy();
+            //Mensaje(x);
             //datos.ConsultarComando(x);
-            datos.Insertar(x);
-            Mensaje("Se a insertado el registro");
         }
         catch (Exception ex)
         {
@@ -249,6 +259,8 @@ public partial class MainWindow : Gtk.Window
 
         }
         int x = int.Parse(spinbuttonID.Text);
+        const int tamaño = 200;
+        image1.Pixbuf = new Gdk.Pixbuf(ObtenerImagen(x), tamaño, tamaño);
 
     }
 
