@@ -178,6 +178,33 @@ public partial class MainWindow : Gtk.Window
                 case 2:
                     UbicacionImagen = "Hotdog.jpeg";
                     break;
+                case 3:
+                    UbicacionImagen = "sopa.jpeg";
+                    break;
+                case 4:
+                    UbicacionImagen = "sandwich.jpeg";
+                    break;
+                case 5:
+                    UbicacionImagen = "sushi.jpeg";
+                    break;
+                case 6:
+                    UbicacionImagen = "spagblanco.jpeg";
+                    break;
+                case 7:
+                    UbicacionImagen = "pollo.jpeg";
+                    break;
+                case 8:
+                    UbicacionImagen = "boneles.jpeg";
+                    break;
+                case 9:
+                    UbicacionImagen = "tbarbacoa.jpeg";
+                    break;
+                case 10:
+                    UbicacionImagen = "ham.jpeg";
+                    break;
+                case 11:
+                    UbicacionImagen = "migas.jpeg";
+                    break;
                 default:
                     UbicacionImagen = "Error.jpeg";
                     break;
