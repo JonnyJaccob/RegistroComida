@@ -212,12 +212,22 @@ public partial class MainWindow : Gtk.Window
 
     private void CambiarId()
     {
-        entryComida.Text = spinbuttonID.Text;
+        if(string.IsNullOrEmpty(spinbuttonID.Text))//sea nulo o vacio
+        {
+            spinbuttonID.Text = "0";
+            entryComida.Text = "0";
+        }else
+        {
+            entryComida.Text = spinbuttonID.Text;
+
+        }
         int x = int.Parse(spinbuttonID.Text);
+
     }
 
     protected void spinimagenid_chenged(object sender, EventArgs e)
     {
+
         CambiarId();
     }
 }
