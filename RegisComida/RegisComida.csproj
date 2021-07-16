@@ -111,6 +111,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseDato.cs" />
+    <Compile Include="WinComidas.cs" />
+    <Compile Include="gtk-gui\RegisComida.WinComidas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

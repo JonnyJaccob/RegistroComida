@@ -171,6 +171,10 @@ public partial class MainWindow : Gtk.Window
             mensaje.Run();
             mensaje.Destroy();
         }
+        finally
+        {
+            datos.Desconectar();
+        }
     }
     private string ObtenerImagen(int imagenid)
     {
@@ -268,5 +272,110 @@ public partial class MainWindow : Gtk.Window
     {
 
         CambiarId();
+    }
+
+    protected void ordenar_clicked(object sender, EventArgs e)
+    {
+        try
+        { 
+        if (rdbregistro.Active && rdbAsc.Active)
+        {
+            Ordenar("registro", "id_registro", "ASC");
+        }
+        else
+        if (rdbregistro.Active && rdbDesc.Active)
+        {//DESC
+            Ordenar("registro", "id_registro", "DESC");
+        }
+        else
+        if (rdbimagen.Active && rdbAsc.Active)
+        {
+            Ordenar("comida", "imagenid", "ASC");
+        }
+        else
+        if (rdbimagen.Active && rdbDesc.Active)
+        {
+            Ordenar("comida", "imagenid", "DESC");
+        }
+        else
+        if (rdbnombre.Active && rdbAsc.Active)
+        {
+            Ordenar("comida", "nombre", "ASC");
+        }
+        else
+        if (rdbnombre.Active && rdbDesc.Active)
+        {
+            Ordenar("comida", "nombre", "DESC");
+        }
+        else
+        if (rdbfecha.Active && rdbAsc.Active)
+        {
+            Ordenar("registro", "fecha", "ASC");
+        }
+        else
+        if (rdbfecha.Active && rdbDesc.Active)
+        {
+            Ordenar("registro", "fecha", "DESC");
+        }
+        else
+        {
+            MensajeError("Error inesperado");
+        }
+        }catch(Exception exx)
+        {
+            MensajeError("" + exx);
+        }
+    }
+    private void Ordenar(string tipo,string tipo2, string orden)
+    {
+        /*SELECT id_registro, comida.imagenid, comida.nombre, registro.fecha
+                FROM registro, comida 
+                WHERE registro.id_comida = comida.id_comida
+            ORDER BY comida.imagenid  ASC*/
+        string query;
+        MySqlCommand valor;
+        MySqlDataReader reader;
+        try
+        {
+
+            registro.Clear();
+            query = "SELECT id_registro, comida.imagenid, comida.nombre, registro.fecha " +
+                "FROM registro, comida " +
+                "WHERE registro.id_comida = comida.id_comida " +
+            $"ORDER BY {tipo}.{tipo2}  {orden}";
+            datos.Conectar();
+            //Mensaje(query);
+            valor = datos.ConsultarComando(query, "");
+            reader = valor.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = int.Parse("" + reader["imagenid"]);
+                var imagenes = new Gdk.Pixbuf(ObtenerImagen(id), 50, 50);
+                registro.AppendValues($"{reader["id_registro"].ToString()}", imagenes, $"{reader["nombre"].ToString()}", $"{reader["fecha"].ToString()}");
+            }
+            reader.Close();
+            datos.Desconectar();
+        }
+        catch (MySqlException exx)
+        {
+            throw new Exception("Error" + exx);
+        }
+        catch (Exception ex)
+        {
+            if (ex == null)
+            {
+                MensajeError("Esta vaicio");
+            }
+            string text = ex.ToString();
+            MessageDialog mensaje = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, $"Error {text}");
+            mensaje.Run();
+            mensaje.Destroy();
+        }
+        finally
+        {
+            datos.Desconectar();
+        }
+
     }
 }

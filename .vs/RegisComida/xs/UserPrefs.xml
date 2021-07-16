@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{7AD6E457-FF3B-4B04-8197-8DFA1CD128DD}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="RegisComida/MainWindow.cs">
     <Files>
-      <File FileName="RegisComida/MainWindow.cs" Line="66" Column="54" />
+      <File FileName="RegisComida/MainWindow.cs" Line="356" Column="14" />
+      <File FileName="RegisComida/Program.cs" Line="13" Column="1" />
+      <File FileName="RegisComida/WinComidas.cs" Line="14" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,14 +15,11 @@
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.RegisComida PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
