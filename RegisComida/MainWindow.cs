@@ -378,4 +378,10 @@ public partial class MainWindow : Gtk.Window
         }
 
     }
+
+    protected void AbrirWinComida(object sender, EventArgs e)
+    {
+        WinComidas com = new WinComidas(datos);
+        com.Show();
+    }
 }

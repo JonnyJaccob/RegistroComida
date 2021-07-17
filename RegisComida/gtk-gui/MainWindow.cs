@@ -17,11 +17,11 @@ public partial class MainWindow
 
 	private global::Gtk.Button btnMostrar;
 
+	private global::Gtk.Button btnOpenWinComida;
+
 	private global::Gtk.Button btnOrdenar;
 
 	private global::Gtk.Button btnSalir;
-
-	private global::Gtk.Button button4;
 
 	private global::Gtk.Label GtkLabel6;
 
@@ -159,17 +159,29 @@ public partial class MainWindow
 		w3.XOptions = ((global::Gtk.AttachOptions)(4));
 		w3.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table3.Gtk.Table+TableChild
+		this.btnOpenWinComida = new global::Gtk.Button();
+		this.btnOpenWinComida.CanFocus = true;
+		this.btnOpenWinComida.Name = "btnOpenWinComida";
+		this.btnOpenWinComida.UseUnderline = true;
+		this.btnOpenWinComida.Label = global::Mono.Unix.Catalog.GetString("¿Que Comer?");
+		this.table3.Add(this.btnOpenWinComida);
+		global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table3[this.btnOpenWinComida]));
+		w4.LeftAttach = ((uint)(3));
+		w4.RightAttach = ((uint)(4));
+		w4.XOptions = ((global::Gtk.AttachOptions)(4));
+		w4.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table3.Gtk.Table+TableChild
 		this.btnOrdenar = new global::Gtk.Button();
 		this.btnOrdenar.CanFocus = true;
 		this.btnOrdenar.Name = "btnOrdenar";
 		this.btnOrdenar.UseUnderline = true;
 		this.btnOrdenar.Label = global::Mono.Unix.Catalog.GetString("Ordenar");
 		this.table3.Add(this.btnOrdenar);
-		global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table3[this.btnOrdenar]));
-		w4.LeftAttach = ((uint)(2));
-		w4.RightAttach = ((uint)(3));
-		w4.XOptions = ((global::Gtk.AttachOptions)(4));
-		w4.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table3[this.btnOrdenar]));
+		w5.LeftAttach = ((uint)(2));
+		w5.RightAttach = ((uint)(3));
+		w5.XOptions = ((global::Gtk.AttachOptions)(4));
+		w5.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table3.Gtk.Table+TableChild
 		this.btnSalir = new global::Gtk.Button();
 		this.btnSalir.CanFocus = true;
@@ -177,21 +189,9 @@ public partial class MainWindow
 		this.btnSalir.UseUnderline = true;
 		this.btnSalir.Label = global::Mono.Unix.Catalog.GetString("Salir");
 		this.table3.Add(this.btnSalir);
-		global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table3[this.btnSalir]));
-		w5.TopAttach = ((uint)(1));
-		w5.BottomAttach = ((uint)(2));
-		w5.LeftAttach = ((uint)(3));
-		w5.RightAttach = ((uint)(4));
-		w5.XOptions = ((global::Gtk.AttachOptions)(4));
-		w5.YOptions = ((global::Gtk.AttachOptions)(4));
-		// Container child table3.Gtk.Table+TableChild
-		this.button4 = new global::Gtk.Button();
-		this.button4.CanFocus = true;
-		this.button4.Name = "button4";
-		this.button4.UseUnderline = true;
-		this.button4.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
-		this.table3.Add(this.button4);
-		global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.table3[this.button4]));
+		global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.table3[this.btnSalir]));
+		w6.TopAttach = ((uint)(1));
+		w6.BottomAttach = ((uint)(2));
 		w6.LeftAttach = ((uint)(3));
 		w6.RightAttach = ((uint)(4));
 		w6.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -551,6 +551,7 @@ public partial class MainWindow
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.btnSalir.Clicked += new global::System.EventHandler(this.btnSalir_Clicked);
 		this.btnOrdenar.Clicked += new global::System.EventHandler(this.ordenar_clicked);
+		this.btnOpenWinComida.Clicked += new global::System.EventHandler(this.AbrirWinComida);
 		this.btnMostrar.Clicked += new global::System.EventHandler(this.btnMostrar_Clicked);
 		this.btnInsertar.Clicked += new global::System.EventHandler(this.btnInsertar_Clicked);
 		this.spinbuttonID.Changed += new global::System.EventHandler(this.spinimagenid_chenged);

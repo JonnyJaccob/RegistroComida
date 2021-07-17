@@ -96,6 +96,29 @@
                               </packing>
                             </child>
                             <child>
+                              <widget class="Gtk.Button" id="btnOpenWinComida">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Type">TextOnly</property>
+                                <property name="Label" translatable="yes">¿Que Comer?</property>
+                                <property name="UseUnderline">True</property>
+                                <signal name="Clicked" handler="AbrirWinComida" />
+                              </widget>
+                              <packing>
+                                <property name="LeftAttach">3</property>
+                                <property name="RightAttach">4</property>
+                                <property name="AutoSize">True</property>
+                                <property name="XOptions">Fill</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">False</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
                               <widget class="Gtk.Button" id="btnOrdenar">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
@@ -130,28 +153,6 @@
                               <packing>
                                 <property name="TopAttach">1</property>
                                 <property name="BottomAttach">2</property>
-                                <property name="LeftAttach">3</property>
-                                <property name="RightAttach">4</property>
-                                <property name="AutoSize">True</property>
-                                <property name="XOptions">Fill</property>
-                                <property name="YOptions">Fill</property>
-                                <property name="XExpand">False</property>
-                                <property name="XFill">True</property>
-                                <property name="XShrink">False</property>
-                                <property name="YExpand">False</property>
-                                <property name="YFill">True</property>
-                                <property name="YShrink">False</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="Gtk.Button" id="button4">
-                                <property name="MemberName" />
-                                <property name="CanFocus">True</property>
-                                <property name="Type">TextOnly</property>
-                                <property name="Label" translatable="yes">GtkButton</property>
-                                <property name="UseUnderline">True</property>
-                              </widget>
-                              <packing>
                                 <property name="LeftAttach">3</property>
                                 <property name="RightAttach">4</property>
                                 <property name="AutoSize">True</property>
@@ -851,17 +852,15 @@
                     <property name="RowSpacing">6</property>
                     <property name="ColumnSpacing">6</property>
                     <child>
-                      <widget class="Gtk.Button" id="btnSalir">
+                      <widget class="Gtk.Button" id="btnMostrar">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">Salir</property>
+                        <property name="Label" translatable="yes">Mostrar</property>
                         <property name="UseUnderline">True</property>
-                        <signal name="Clicked" handler="Salir_clicked" />
+                        <signal name="Clicked" handler="Mostrar_Clicked" />
                       </widget>
                       <packing>
-                        <property name="LeftAttach">2</property>
-                        <property name="RightAttach">3</property>
                         <property name="AutoSize">True</property>
                         <property name="XOptions">Fill</property>
                         <property name="YOptions">Fill</property>
@@ -874,14 +873,17 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.Button" id="button1">
+                      <widget class="Gtk.Button" id="btnSalir">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">GtkButton</property>
+                        <property name="Label" translatable="yes">Regresar</property>
                         <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="Salir_clicked" />
                       </widget>
                       <packing>
+                        <property name="LeftAttach">2</property>
+                        <property name="RightAttach">3</property>
                         <property name="AutoSize">True</property>
                         <property name="XOptions">Fill</property>
                         <property name="YOptions">Fill</property>

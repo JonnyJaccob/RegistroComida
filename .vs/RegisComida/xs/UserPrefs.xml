@@ -1,24 +1,31 @@
 ﻿<Properties StartupConfiguration="{7AD6E457-FF3B-4B04-8197-8DFA1CD128DD}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RegisComida/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RegisComida/WinComidas.cs">
     <Files>
-      <File FileName="RegisComida/MainWindow.cs" Line="356" Column="14" />
-      <File FileName="RegisComida/Program.cs" Line="13" Column="1" />
-      <File FileName="RegisComida/WinComidas.cs" Line="14" Column="13" />
+      <File FileName="RegisComida/MainWindow.cs" Line="340" Column="13" />
+      <File FileName="RegisComida/WinComidas.cs" Line="94" Column="70" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RegisComida" expanded="True">
             <Node name="RegisComida" expanded="True">
-              <Node name="MainWindow.cs" selected="True" />
+              <Node name="WinComidas.cs" selected="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>textview1.Buffer.Text</Value>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.RegisComida PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../RegisComida/WinComidas.cs" line="105" offsetX="346" offsetY="1352" expression="item" liveUpdate="False" />
+    <Watch file="../../../RegisComida/WinComidas.cs" line="105" offsetX="346" offsetY="1352" expression="lista" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
