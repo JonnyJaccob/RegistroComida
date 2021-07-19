@@ -120,3 +120,4 @@
 /home/josue-user/Repos/ProyectoC/C#/RegisComida/RegisComida/obj/x86/Release/RegisComida.csproj.CoreCompileInputs.cache
 /home/josue-user/Repos/ProyectoC/C#/RegisComida/RegisComida/obj/x86/Release/RegisComida.csproj.CopyComplete
 /home/josue-user/Repos/ProyectoC/C#/RegisComida/RegisComida/obj/x86/Release/RegisComida.exe
+/home/josue-user/Repos/ProyectoC/C#/RegisComida/RegisComida/obj/x86/Release/RegisComida.csprojAssemblyReference.cache

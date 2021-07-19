@@ -31,7 +31,8 @@ namespace RegisComida
 			global::Stetic.Gui.Initialize(this);
 			// Widget RegisComida.WinComidas
 			this.Name = "RegisComida.WinComidas";
-			this.Title = global::Mono.Unix.Catalog.GetString("WinComidas");
+			this.Title = global::Mono.Unix.Catalog.GetString("¿Que Comer?");
+			this.Icon = global::Stetic.IconLoader.LoadIcon(this, "gtk-dialog-info", global::Gtk.IconSize.Menu);
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Container child RegisComida.WinComidas.Gtk.Container+ContainerChild
 			this.scrolledwindow1 = new global::Gtk.ScrolledWindow();

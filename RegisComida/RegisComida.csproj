@@ -113,6 +113,8 @@
     <Compile Include="BaseDato.cs" />
     <Compile Include="WinComidas.cs" />
     <Compile Include="gtk-gui\RegisComida.WinComidas.cs" />
+    <Compile Include="WinAddComida.cs" />
+    <Compile Include="gtk-gui\RegisComida.WinAddComida.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

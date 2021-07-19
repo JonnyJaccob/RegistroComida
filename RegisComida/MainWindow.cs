@@ -3,6 +3,7 @@ using Gtk;
 using MySql.Data.MySqlClient;
 using RegisComida;
 using System.IO;
+using System.Diagnostics;
 
 public partial class MainWindow : Gtk.Window
 {
@@ -10,6 +11,9 @@ public partial class MainWindow : Gtk.Window
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
+        fixed1.HasWindow = true;//POne su fondo a la app?
+        ModifyBg(StateType.Normal, new Gdk.Color(0, 0, 0));
+        fixed1.ModifyBg(StateType.Normal, new Gdk.Color(0, 0, 0));//Cabiar el fondo del fixed?
         datos.CambiarDatabase("localhost", "regis_comida", "root", "");
         CellRendererPixbuf activeCell = new Gtk.CellRendererPixbuf();
         CellRendererText utilNameCell = new CellRendererText();
@@ -219,6 +223,24 @@ public partial class MainWindow : Gtk.Window
                 case 11:
                     UbicacionImagen = "migas.jpeg";
                     break;
+                case 12:
+                    UbicacionImagen = "pescado.jpeg";
+                    break;
+                case 13:
+                    UbicacionImagen = "verduras.jpeg";
+                    break;
+                case 14:
+                    UbicacionImagen = "arroz.jpeg";
+                    break;
+                case 15:
+                    UbicacionImagen = "tacos.jpeg";
+                    break;
+                case 16:
+                    UbicacionImagen = "ppollo.jpeg";
+                    break;
+                case 17:
+                    UbicacionImagen = "loncheternera.jpeg";
+                    break;
                 default:
                     UbicacionImagen = "Error.jpeg";
                     break;
@@ -383,5 +405,17 @@ public partial class MainWindow : Gtk.Window
     {
         WinComidas com = new WinComidas(datos);
         com.Show();
+    }
+
+    protected void CambiarFondo_clicked(object sender, EventArgs e)
+    {
+        ModifyBg(StateType.Normal, new Gdk.Color(1, 1, 1));
+        fixed1.ModifyBg(StateType.Normal, new Gdk.Color(1, 1, 1));
+    }
+
+    protected void Btnabrirventanacomida_clicked(object sender, EventArgs e)
+    {
+        WinAddComida add = new WinAddComida(datos);
+        add.Show();
     }
 }

@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Debug/RegisComida.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="854 554">
+  <widget class="Gtk.Window" id="MainWindow" design-size="873 554">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Registro de comida</property>
     <property name="Icon">stock:stock_internet Menu</property>
@@ -46,10 +46,53 @@
                               <placeholder />
                             </child>
                             <child>
-                              <placeholder />
+                              <widget class="Gtk.Button" id="btnCambiarFondo">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Type">TextOnly</property>
+                                <property name="Label" translatable="yes">Cambiar fondo</property>
+                                <property name="UseUnderline">True</property>
+                                <signal name="Clicked" handler="CambiarFondo_clicked" />
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">1</property>
+                                <property name="BottomAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="XOptions">Fill</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">False</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
                             </child>
                             <child>
-                              <placeholder />
+                              <widget class="Gtk.Button" id="btnComida">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Type">TextOnly</property>
+                                <property name="Label" translatable="yes">Crear
+Comida</property>
+                                <property name="UseUnderline">True</property>
+                                <signal name="Clicked" handler="Btnabrirventanacomida_clicked" />
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">1</property>
+                                <property name="BottomAttach">2</property>
+                                <property name="LeftAttach">1</property>
+                                <property name="RightAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="XOptions">Fill</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">False</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
                             </child>
                             <child>
                               <widget class="Gtk.Button" id="btnInsertar">
@@ -459,7 +502,7 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="Gtk.Label" id="GtkLabel5">
+                      <widget class="Gtk.Label" id="GtkLabel7">
                         <property name="MemberName" />
                         <property name="LabelProp" translatable="yes">&lt;b&gt;INFORMACION&lt;/b&gt;</property>
                         <property name="UseMarkup">True</property>
@@ -502,7 +545,7 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="Gtk.Label" id="GtkLabel7">
+                      <widget class="Gtk.Label" id="GtkLabel8">
                         <property name="MemberName" />
                         <property name="LabelProp" translatable="yes">&lt;b&gt;Tabla&lt;/b&gt;</property>
                         <property name="UseMarkup">True</property>
@@ -645,7 +688,7 @@
                                   </widget>
                                 </child>
                                 <child>
-                                  <widget class="Gtk.Label" id="GtkLabel14">
+                                  <widget class="Gtk.Label" id="GtkLabel16">
                                     <property name="MemberName" />
                                     <property name="LabelProp" translatable="yes">&lt;b&gt;Tipo&lt;/b&gt;</property>
                                     <property name="UseMarkup">True</property>
@@ -733,7 +776,7 @@
                                   </widget>
                                 </child>
                                 <child>
-                                  <widget class="Gtk.Label" id="GtkLabel10">
+                                  <widget class="Gtk.Label" id="GtkLabel11">
                                     <property name="MemberName" />
                                     <property name="LabelProp" translatable="yes">&lt;b&gt;Orden&lt;/b&gt;</property>
                                     <property name="UseMarkup">True</property>
@@ -762,7 +805,7 @@
                       </widget>
                     </child>
                     <child>
-                      <widget class="Gtk.Label" id="GtkLabel15">
+                      <widget class="Gtk.Label" id="GtkLabel17">
                         <property name="MemberName" />
                         <property name="LabelProp" translatable="yes">&lt;b&gt;Ordenar&lt;/b&gt;</property>
                         <property name="UseMarkup">True</property>
@@ -786,7 +829,8 @@
   </widget>
   <widget class="Gtk.Window" id="RegisComida.WinComidas" design-size="339 300">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">WinComidas</property>
+    <property name="Title" translatable="yes">¿Que Comer?</property>
+    <property name="Icon">stock:gtk-dialog-info Menu</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
       <widget class="Gtk.ScrolledWindow" id="scrolledwindow1">
@@ -926,6 +970,339 @@
               </widget>
             </child>
           </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="RegisComida.WinAddComida" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WinAddComida</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Frame" id="frame2">
+            <property name="MemberName" />
+            <property name="ShadowType">None</property>
+            <child>
+              <widget class="Gtk.Alignment" id="GtkAlignment">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="Yalign">0</property>
+                <property name="LeftPadding">12</property>
+                <child>
+                  <widget class="Gtk.Table" id="table1">
+                    <property name="MemberName" />
+                    <property name="NRows">4</property>
+                    <property name="NColumns">3</property>
+                    <property name="RowSpacing">6</property>
+                    <property name="ColumnSpacing">6</property>
+                    <child>
+                      <placeholder />
+                    </child>
+                    <child>
+                      <placeholder />
+                    </child>
+                    <child>
+                      <placeholder />
+                    </child>
+                    <child>
+                      <placeholder />
+                    </child>
+                    <child>
+                      <widget class="Gtk.ComboBoxEntry" id="cmbComidas">
+                        <property name="MemberName" />
+                        <property name="IsTextCombo">True</property>
+                        <property name="Items" translatable="yes" />
+                      </widget>
+                      <packing>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Entry" id="entrynombre">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="IsEditable">True</property>
+                        <property name="MaxLength">25</property>
+                        <property name="InvisibleChar">•</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">3</property>
+                        <property name="BottomAttach">4</property>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="label1">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Comidas 
+anteriores</property>
+                      </widget>
+                      <packing>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="label3">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">id_comida</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">1</property>
+                        <property name="BottomAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="label4">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">imagenID</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">2</property>
+                        <property name="BottomAttach">3</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="label5">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Nombre</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">3</property>
+                        <property name="BottomAttach">4</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.SpinButton" id="spincomida">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="Upper">100</property>
+                        <property name="PageIncrement">10</property>
+                        <property name="StepIncrement">1</property>
+                        <property name="ClimbRate">1</property>
+                        <property name="Numeric">True</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">1</property>
+                        <property name="BottomAttach">2</property>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.SpinButton" id="spinimagen">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="Upper">100</property>
+                        <property name="PageIncrement">10</property>
+                        <property name="StepIncrement">1</property>
+                        <property name="ClimbRate">1</property>
+                        <property name="Numeric">True</property>
+                      </widget>
+                      <packing>
+                        <property name="TopAttach">2</property>
+                        <property name="BottomAttach">3</property>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">True</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="YOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">False</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                  </widget>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="GtkLabel">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;b&gt;Creacion de comidas&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="type">label_item</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">-3</property>
+            <property name="Y">9</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Table" id="table3">
+            <property name="MemberName" />
+            <property name="NColumns">4</property>
+            <property name="RowSpacing">6</property>
+            <property name="ColumnSpacing">6</property>
+            <child>
+              <widget class="Gtk.Button" id="btnañadir">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label">Añadir</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="Añadir_Clicked" />
+              </widget>
+              <packing>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnModificar">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Modificar</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="Modificar_Clicked" />
+              </widget>
+              <packing>
+                <property name="LeftAttach">1</property>
+                <property name="RightAttach">2</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnRegresar">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Regresar</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="Regresar" />
+              </widget>
+              <packing>
+                <property name="LeftAttach">3</property>
+                <property name="RightAttach">4</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="btnupdate">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Actualizar</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="Update_Clicked" />
+              </widget>
+              <packing>
+                <property name="LeftAttach">2</property>
+                <property name="RightAttach">3</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">25</property>
+            <property name="Y">220</property>
+          </packing>
         </child>
       </widget>
     </child>

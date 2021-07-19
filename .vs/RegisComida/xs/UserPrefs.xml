@@ -1,23 +1,22 @@
 ﻿<Properties StartupConfiguration="{7AD6E457-FF3B-4B04-8197-8DFA1CD128DD}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RegisComida/WinComidas.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RegisComida/WinAddComida.cs">
     <Files>
-      <File FileName="RegisComida/MainWindow.cs" Line="340" Column="13" />
-      <File FileName="RegisComida/WinComidas.cs" Line="94" Column="70" />
+      <File FileName="RegisComida/WinComidas.cs" Line="72" Column="35" />
+      <File FileName="RegisComida/MainWindow.cs" Line="15" Column="58" />
+      <File FileName="RegisComida/WinAddComida.cs" Line="59" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RegisComida" expanded="True">
             <Node name="RegisComida" expanded="True">
-              <Node name="WinComidas.cs" selected="True" />
+              <Node name="WinAddComida.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>textview1.Buffer.Text</Value>
-        </State>
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
