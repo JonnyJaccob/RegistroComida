@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="RegisComida/WinAddComida.cs">
     <Files>
       <File FileName="RegisComida/WinComidas.cs" Line="72" Column="35" />
-      <File FileName="RegisComida/MainWindow.cs" Line="15" Column="58" />
-      <File FileName="RegisComida/WinAddComida.cs" Line="59" Column="29" />
+      <File FileName="RegisComida/MainWindow.cs" Line="276" Column="19" />
+      <File FileName="RegisComida/WinAddComida.cs" Line="144" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,7 +25,7 @@
     <Watch file="../../../RegisComida/WinComidas.cs" line="105" offsetX="346" offsetY="1352" expression="item" liveUpdate="False" />
     <Watch file="../../../RegisComida/WinComidas.cs" line="105" offsetX="346" offsetY="1352" expression="lista" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

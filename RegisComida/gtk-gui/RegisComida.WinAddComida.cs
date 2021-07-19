@@ -230,6 +230,7 @@ namespace RegisComida
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
 			this.Show();
+			this.spincomida.Changed += new global::System.EventHandler(this.Spincomida_changed);
 			this.btnupdate.Clicked += new global::System.EventHandler(this.Update_Clicked);
 			this.btnRegresar.Clicked += new global::System.EventHandler(this.Regresar);
 			this.btnModificar.Clicked += new global::System.EventHandler(this.Modificar_Clicked);
