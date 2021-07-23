@@ -15,6 +15,7 @@ public partial class MainWindow : Gtk.Window
         ModifyBg(StateType.Normal, new Gdk.Color(0, 0, 0));
         fixed1.ModifyBg(StateType.Normal, new Gdk.Color(0, 0, 0));//Cabiar el fondo del fixed?
         datos.CambiarDatabase("localhost", "regis_comida", "root", "");
+        ActualizarSpin();
         CellRendererPixbuf activeCell = new Gtk.CellRendererPixbuf();
         CellRendererText utilNameCell = new CellRendererText();
         TreeViewColumn Columnaid_registro = new TreeViewColumn
@@ -241,6 +242,15 @@ public partial class MainWindow : Gtk.Window
                 case 17:
                     UbicacionImagen = "loncheternera.jpeg";
                     break;
+                case 18:
+                    UbicacionImagen = "hot_cake.jpeg";
+                    break;
+                case 19:
+                    UbicacionImagen = "subway.jpeg";
+                    break;
+                case 20:
+                    UbicacionImagen = "albondigas.jpeg";
+                    break;
                 default:
                     UbicacionImagen = "Error.jpeg";
                     break;
@@ -417,5 +427,18 @@ public partial class MainWindow : Gtk.Window
     {
         WinAddComida add = new WinAddComida(datos);
         add.Show();
+    }
+    private void ActualizarSpin()
+    {
+        try
+        {
+            DateTime date = DateTime.Now;
+            spinhora.Text = date.Hour.ToString();
+            spinmin.Text = date.Minute.ToString();
+        }
+        catch (Exception ex)
+        {
+            Mensaje(ex + "");
+        }
     }
 }
