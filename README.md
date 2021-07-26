@@ -1,1 +1,2 @@
-README principal
+README principal  
+## Version mas completa
